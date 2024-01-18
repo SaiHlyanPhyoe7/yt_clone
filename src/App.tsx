@@ -1,13 +1,13 @@
-import { useState } from "react"
-import { CategoryPills } from "./components/CategoryPills"
-import { categories, videos } from "./data/home"
-import { PageHeader } from "./layouts/PageHeader"
-import { VideoGridItem } from "./components/VideoGridItem"
-import { Sidebar } from "./layouts/Sidebar"
-import { SidebarProvider } from "./contexts/SidebarContext"
+import { useState } from "react";
+import { CategoryPills } from "./components/CategoryPills";
+import { categories, videos } from "./data/home";
+import { PageHeader } from "./layouts/PageHeader";
+import { VideoGridItem } from "./components/VideoGridItem";
+import { Sidebar } from "./layouts/Sidebar";
+import { SidebarProvider } from "./contexts/SidebarContext";
 
 export default function App() {
-  const [selectedCategory, setSelectedCategory] = useState(categories[0])
+  const [selectedCategory, setSelectedCategory] = useState(categories[0]);
 
   return (
     <SidebarProvider>
@@ -24,7 +24,7 @@ export default function App() {
               />
             </div>
             <div className="grid gap-4 grid-cols-[repeat(auto-fill,minmax(300px,1fr))]">
-              {videos.map(video => (
+              {videos.map((video) => (
                 <VideoGridItem key={video.id} {...video} />
               ))}
             </div>
@@ -32,5 +32,5 @@ export default function App() {
         </div>
       </div>
     </SidebarProvider>
-  )
+  );
 }
